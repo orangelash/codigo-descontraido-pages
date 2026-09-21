@@ -1,76 +1,63 @@
-# Código Descontraído — website
+# Código Descontraído — technology &amp; training
 
-Static company website for Código Descontraído Unipessoal Lda, served by GitHub Pages from the
-root of this repository. No build step, no dependencies.
+Static site for the security, engineering and training side of the business. Deployed with
+GitHub Pages from the repository root.
 
-**Live at:** https://orangelash.github.io/codigo-descontraido-pages/
-
-## Files
-
-| File | Purpose |
+| File | What it is |
 | --- | --- |
-| `index.html` | The whole site — one page, three practice bands, six service lines |
-| `404.html` | Not-found page, styled from the same stylesheet |
-| `styles.css` | All styling. Design tokens live in `:root` |
-| `favicon.svg` | Browser tab icon |
-| `icon-180.png` | Apple touch icon for a home-screen bookmark |
-| `og.png` | 1200×630 preview card for shared links |
-| `robots.txt` | Allows everything |
-| `.nojekyll` | Serve the files as-is instead of running Jekyll |
+| `index.html` | The whole site — one page, anchored sections |
+| `styles.css` | All styling. No build step, no framework |
+| `favicon.svg`, `icon-180.png` | Tab and touch icons |
+| `og.png` | Social preview card |
+| `404.html` | Not-found page |
+| `.nojekyll` | Stops Pages running the content through Jekyll |
 
-## Enabling GitHub Pages
+## Deploying
 
-Repository **Settings → Pages**:
+Settings → Pages → Deploy from a branch → `main` / `/ (root)`.
 
-- **Source:** Deploy from a branch
-- **Branch:** `main`, folder `/ (root)`
+The absolute `og:url` and `og:image` in `index.html` assume
+`https://orangelash.github.io/codigo-descontraido-pages/`. Both need updating if a custom
+domain is added.
 
-The first deploy takes a minute or two.
+## What this page is for
 
-## Using a custom domain
+It sells, rather than explaining. The structure is deliberate:
 
-Add a `CNAME` file at the root containing the bare hostname:
+1. The gap between what engineers know and what the client was promised — the positioning.
+2. Six numbers, for credibility.
+3. **"Which of these is you?"** — six problems in the buyer's own words, each with what they
+   walk away with and the experience that backs it. This is the page's engine; everything else
+   supports it.
+4. The anonymised track record, 2017 → now.
+5. Why us, how an engagement runs, and the four ways to engage.
+6. The service catalogue, demoted to reference.
+7. Objections, then the call to action.
 
-```
-codigodescontraido.com
-```
+An earlier version led with the catalogue. It explained the services accurately and sold
+nothing, because it never said why this company rather than another one.
 
-Point the domain's DNS at GitHub Pages — an `ALIAS`/`ANAME` record, or GitHub's four apex `A`
-records, or a `CNAME` record for a subdomain — then set the domain under Settings → Pages and
-enable **Enforce HTTPS** once the certificate is issued.
+## Conventions this site holds to
 
-**Then update two tags in `index.html`.** `og:url` and `og:image` are absolute and currently point
-at the github.io address. Crawlers cache them, and a preview pointing at the old host is worse than
-none.
+**Disclosure.** The only company details published are the company name and the contact email.
+No personal name, no address, no tax number, no incorporation date, no headcount, and no
+employer or client names.
 
-## Design
+**No invented proof.** No client names, logos, metrics, case studies or testimonials. The FAQ
+says plainly why there is no logo wall, which is both true and a better answer than a blank space.
 
-The site deliberately mirrors the company overview deck, so the two read as one identity: the same
-palette, one colour per practice — petrol for technology, amber for training, sienna for assets —
-saturated full-bleed bands, and layered circles as the repeating motif.
+**Both dates, never merged.** The company has traded since 2022; the experience behind it starts
+in 2017. The two stat labels carry that distinction on their own — do not add prose explaining
+the policy, which only draws attention to the gap.
 
-Icons are one inline SVG sprite at the top of `index.html`, referenced with `<use href="#i-…">`.
-Nothing is fetched at runtime except the Google Fonts stylesheet.
+## Commitments in the copy
 
-## Two things held deliberately
+The page promises a free 45-minute first call, a written scope inside a week, a reply within two
+business days, and fixed pricing wherever the work can be fixed. Change the copy if any of those
+stops being true.
 
-**Disclosure.** The only company details anywhere on the site are the company name and the contact
-email. No address, tax number, incorporation date or headcount.
+## Relationship to the classic car site
 
-**No invented proof.** No client names, logos, metrics, case studies or testimonials, because there
-were none to use. Add them only where they are true and you have permission.
-
-## Editing
-
-Each service line is one `<article class="line">`: a heading, a summary paragraph, then `<h4>`
-groups with bullet lists. Copy an existing block to add another.
-
-Colours, spacing and fonts are tokens at the top of `styles.css`. Changing a practice colour there
-restyles that whole band.
-
-## Checking a change
-
-The decorative circles sit in bands with `overflow: hidden`, so an element-level overflow check
-will flag them and the off-screen skip link. The signal that matters is
-`document.documentElement.scrollWidth` equalling the viewport width at phone width — that is what
-proves the page does not scroll sideways. Verified at 360px.
+Sibling of the classic car site, which is a separate property for a separate buyer: same fonts,
+same layered-circle motif, same band rhythm, led by sienna instead of petrol green. Change the
+shared identity in one and the other should follow.
