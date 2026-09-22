@@ -419,3 +419,67 @@ footer a { color: #a9c2bb; }
   .hero .o4 { width: 170px; height: 170px; left: -105px; bottom: -105px; }
   .hero-fine { position: relative; }
 }
+
+/* "Who does it" — the scope boundary inside a service card. A buyer handing over
+   a codebase needs to know which work is done here and which is brought in. */
+.line .whodoes {
+  margin: 22px 0 0; background: var(--tint); border-radius: 4px; padding: 15px 17px;
+  font-size: .95rem; color: var(--ink-2); line-height: 1.5;
+}
+.line .whodoes b {
+  font-family: "Schibsted Grotesk", sans-serif; font-weight: 600; color: var(--accent);
+}
+
+/* The service catalogue is reference, not pitch, so it is folded away rather than
+   padding the scroll between the sell and the call to action. */
+.svc-more { margin-top: 40px; }
+.svc-more > summary {
+  font-family: "Schibsted Grotesk", sans-serif; font-weight: 600; font-size: 1rem;
+  color: var(--tech); cursor: pointer; display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 26px; border-radius: 100px; background: var(--paper);
+  border: 1px solid #c4d5d0; list-style: none;
+}
+.svc-more > summary::-webkit-details-marker { display: none; }
+.svc-more > summary::after { content: "＋"; font-weight: 700; }
+.svc-more[open] > summary::after { content: "－"; }
+.svc-more > summary:hover { border-color: var(--tech); }
+.svc-more[open] > summary { margin-bottom: 8px; }
+
+/* ---------- the principal ---------- */
+/* A pitch built on one person's track record has to say who that person is.
+   .pic is a monogram until a real photograph is dropped in — see the README. */
+
+.principal {
+  display: flex; gap: 26px; align-items: flex-start; flex-wrap: wrap;
+  margin-top: 44px; padding: 28px 30px;
+  background: rgba(255, 255, 255, .06); border-left: 3px solid var(--tech-hi);
+  border-radius: 0 6px 6px 0;
+}
+.principal .pic {
+  width: 96px; height: 96px; border-radius: 50%; flex: none; overflow: hidden;
+  background: var(--tech); display: grid; place-items: center;
+}
+.principal .pic span {
+  font-family: "Schibsted Grotesk", sans-serif; font-weight: 700; font-size: 2rem;
+  letter-spacing: -.03em; color: #fff;
+}
+.principal .pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.principal .who-txt { flex: 1 1 320px; min-width: 0; }
+.principal .lbl {
+  font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .68rem;
+  letter-spacing: .17em; text-transform: uppercase; color: var(--train-hi); margin: 0 0 8px;
+}
+.principal h3 { font-size: 1.5rem; font-weight: 700; letter-spacing: -.026em; margin: 0 0 12px; color: #fff; }
+.principal p { margin: 0; color: #a9c2bb; font-size: 1.01rem; max-width: 66ch; }
+.principal .links {
+  margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+  font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .84rem;
+}
+.principal .links a { color: var(--tech-hi); }
+.principal .links span { color: #5d7570; }
+
+@media (max-width: 620px) {
+  .principal { padding: 22px 20px; gap: 18px; }
+  .principal .pic { width: 72px; height: 72px; }
+  .principal .pic span { font-size: 1.5rem; }
+}
