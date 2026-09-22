@@ -483,3 +483,30 @@ footer a { color: #a9c2bb; }
   .principal .pic { width: 72px; height: 72px; }
   .principal .pic span { font-size: 1.5rem; }
 }
+
+/* ---------- sister-business callout ---------- */
+/* In the other business's colour, so a security buyer reads it as a separate
+   company activity rather than as a distraction inside the pitch. It sits after
+   the objections and before the call to action, never beside the service copy. */
+
+.crossover { background: var(--night); color: #fff; padding-block: 44px; border-top: 3px solid var(--asset); }
+.cross-in {
+  display: flex; gap: 30px; align-items: center; justify-content: space-between; flex-wrap: wrap;
+}
+.cross-in > div { flex: 1 1 420px; min-width: 0; }
+.cross-k {
+  font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .68rem;
+  letter-spacing: .17em; text-transform: uppercase; color: var(--asset-hi); margin: 0 0 10px;
+}
+.crossover h2 {
+  font-family: "Schibsted Grotesk", sans-serif; font-size: 1.5rem; font-weight: 700;
+  letter-spacing: -.026em; margin: 0 0 10px; color: #fff;
+}
+.crossover p { margin: 0; color: #a9c2bb; font-size: 1rem; max-width: 62ch; }
+.btn-cross { background: var(--asset-hi); color: #2a0f06; flex: none; }
+.btn-cross:hover { background: #d4784d; }
+
+@media (max-width: 620px) {
+  .crossover { padding-block: 36px; }
+  .cross-in { gap: 22px; }
+}
