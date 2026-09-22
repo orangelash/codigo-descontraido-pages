@@ -510,3 +510,8 @@ footer a { color: #a9c2bb; }
   .crossover { padding-block: 36px; }
   .cross-in { gap: 22px; }
 }
+
+/* A scope boundary or a credential stated before the bullet list, not after it:
+   a buyer who stops reading half way should still have seen the limitation. */
+.line .whodoes.upfront { margin: 0 0 4px; }
+.line .whodoes + .whodoes { margin-top: 12px; }
