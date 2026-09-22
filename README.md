@@ -7,6 +7,7 @@ GitHub Pages from the repository root.
 | --- | --- |
 | `index.html` | The whole site — one page, anchored sections |
 | `styles.css` | All styling. No build step, no framework |
+| `CNAME` | Binds the custom domain. Deleting it reverts the site to the github.io URL |
 | `favicon.svg`, `icon-180.png` | Tab and touch icons |
 | `og.png` | Social preview card |
 | `404.html` | Not-found page |
@@ -16,9 +17,13 @@ GitHub Pages from the repository root.
 
 Settings → Pages → Deploy from a branch → `main` / `/ (root)`.
 
-The absolute `og:url` and `og:image` in `index.html` assume
-`https://orangelash.github.io/codigo-descontraido-pages/`. Both need updating if a custom
-domain is added.
+The site is served at **https://codigodescontraido.com**. `CNAME` at the repository root binds
+the domain; the absolute `og:url` and `og:image` in `index.html` point at it. All three must
+change together if the domain ever does.
+
+The DNS records live at Cloudflare, which is both registrar and DNS for this domain. They must
+be set to **DNS only** (grey cloud) — if Cloudflare proxies them, GitHub cannot complete its
+certificate challenge and *Enforce HTTPS* stays unavailable.
 
 ## What this page is for
 
