@@ -118,9 +118,13 @@ h2.big {
   display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
 }
 .brand {
+  display: inline-flex; align-items: center; gap: 10px;
   font-family: "Schibsted Grotesk", sans-serif; font-weight: 700; font-size: 1.02rem;
   letter-spacing: -.015em; color: #fff; text-decoration: none; margin-right: auto; white-space: nowrap;
 }
+/* The mark accompanies the wordmark rather than replacing it — the company name
+   is long enough that the mark alone would not identify it. */
+.brand img { display: block; flex: none; }
 .brand em { font-style: normal; color: var(--tech-hi); }
 .nav-links {
   display: flex; gap: 4px; flex-wrap: wrap;
